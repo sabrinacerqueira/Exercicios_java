@@ -1,0 +1,196 @@
+package main;
+import java.util.Scanner;
+public class main {
+
+	public static void main(String[] args) {
+	     Scanner ler = new Scanner (System.in);
+	       
+	     	System.out.println("--- Exercício 1 ---");//pular linha
+	     	
+	     	System.out.println("Digite um número inteiro");
+	        int num = ler.nextInt();
+	        
+	        if( num > 0 ){
+	            System.out.println("O número é positivo.");
+	        }
+	        else if ( num == 0){
+	            System.out.println("O número é neutro.");
+	        }
+	        else{
+	            System.out.println("O número é negativo.");
+	        }	
+	        
+	        System.out.println();
+	     	System.out.println("--- Exercício 2 ---");//pular linha
+	     	
+	     	System.out.println("Digite o primeiro número");
+	     	double num1 = ler.nextDouble();
+	     	System.out.println("Digite o segundo número");
+	     	double num2 = ler.nextDouble();
+	     	
+	     	if(num1 == num2) {
+	     		System.out.println("Os números são iguais");
+	     	}
+	     	else {
+	     		System.out.println("Os números são diferentes");
+	     	}
+	     	
+	     	if( num1 > num2) {
+	     		System.out.println("O primeiro número é maior.");
+	     	}
+	     	else if ( num2 > num1) {
+	     		System.out.println("O segundo número é maior");
+	     	}
+	     	else {
+	     		System.out.println("Ambos números tem o mesmo valor");
+	     	}
+	     	
+	     	System.out.println();
+	     	System.out.println("--- Exercício 3 ---");//pular linha
+	     	   
+	     	System.out.println("Digite 1 para calcular a área do quadrado");
+	     	System.out.println("Digite 2 para calcular a área do círculo");
+	     	int opçao = ler.nextInt();
+	     		
+	     	switch(opçao){
+	     		case 1: 
+	     			System.out.println("Digite o valor do lado para calcular a área do quadrado");
+	     			double ladoquadrado = ler.nextDouble();
+	     			double areaquadrado = ladoquadrado*ladoquadrado;
+	     			System.out.println("A área do quadrado é: " + areaquadrado );
+	     			break;
+	     			
+	     		case 2:
+	     			System.out.println("Digite o raio para calcular a área do círculo");
+	     			double raio = ler.nextDouble();
+	     			double areacirculo = Math.PI *(raio*raio);
+	     			System.out.println("A área do círculo é: " + areacirculo + ".");
+	     			break;	
+	     			
+	     		default: 
+	     			System.out.println("Opção inválida.");
+	     	}
+	     	
+	     	System.out.println();
+	     	System.out.println("--- Exercício 4 ---");//pular linha
+	     	
+	     	int numtabuada;
+			System.out.println("Digite um número:");
+			numtabuada = ler.nextInt();
+			
+			for(int i = 0; i <= 10; i++) {
+				System.out.println(numtabuada + " x " + i + " = " + (numtabuada*i));
+			}
+			
+			System.out.println();
+			System.out.println("--- Exercício 5 ---");//pular linha
+	     
+	     	System.out.println("Digite um número inteiro para verificar se é par ou ímpar");
+	     	int numero = ler.nextInt();
+	     	
+	     	if( numero %2 == 0) {
+	     		System.out.println("O número é par.");
+	     	}
+	     	else {
+	     		System.out.println("O número é ímpar.");
+	     	}
+	     	
+	     	System.out.println();
+	     	System.out.println("--- Exercício 6 ---");//pular linha
+	     	
+	     	System.out.println("Digite um número inteiro para calcular o fatorial");
+	     	int fatorial = ler.nextInt();
+	     	int resultado = 1;
+	     	
+	     	for( int i = 1; i <= fatorial; i++) {
+	     		
+	     		resultado = resultado*i;
+	     	}
+	     	System.out.println("O fatorial do número digitado é: " + resultado);
+	     	
+	     	System.out.println();
+	     	System.out.println("--- Exercício 7 ---");//pular linha
+	     	
+	     	System.out.println("Digite sua idade:");
+	     	int idade = ler.nextInt();
+	     	
+	     	if(idade >= 60) {
+	     		System.out.println("Você é idoso(a).");
+	     	}
+	     	else if( idade >= 18) {
+	     		System.out.println("Você é adulto(a).");
+	     	}
+	     	else {
+	     		System.out.println("Você é menor de idade.");
+	     	}
+	     	
+	     	System.out.println();//pular linha
+	     	System.out.println("--- Exercício 8 ---");
+	     	
+	     	System.out.println("Digite um número:");
+	     	
+	     	int numex8 = ler.nextInt();
+	     	int somaImpar = 0 ;
+	     	int numImpar = 1;
+	     	
+	     	for(int i = 1; i <= numex8 ; i++) {
+	     		
+	     		somaImpar += numImpar ;
+	     		numImpar +=  2;
+	     	}
+	     	
+	     	System.out.println(somaImpar);
+	     	
+	     	System.out.println();//pular linha
+	     	ler.nextLine();//consumir o buffer do enter
+	     	System.out.println("--- Exercício 9 ---");
+	     	
+	     	String[] nomes = new String[5];
+	     	boolean teste= false;
+	     
+	     	for(int i = 0; i < nomes.length ; i++) {
+	     		
+	     		System.out.println("Digite o " + i + "º nome:");
+	     		nomes[i] = ler.nextLine();
+	     		
+	     	}
+	     	System.out.println();
+	     	System.out.println("Digite um nome:");
+	     	String novonome = ler.nextLine();
+	     	
+	     	for(String nomelista : nomes) {
+	     		
+	     		if(nomelista.equals(novonome)) {
+	     			teste = true;
+	     		}
+	     	}
+	     	
+	     	if(teste) {
+	     		System.out.println("O nome esta na lista");
+	     	}
+	     	else {
+	     		System.out.println("O nome não esta na lista");
+	     	}
+	     	System.out.println();//pular linha
+	     	System.out.println("--- Exercício 10 ---");
+	     	
+	     	String senha = "java123";
+	     	String senhausuario;
+	     	
+	     	do {
+	     		System.out.println("Digite a senha");
+	     		senhausuario = ler.nextLine();
+	     		
+	     		if(!senhausuario.equals(senha)) {
+	     			System.out.println("Senha incorreta, tente novamente!");
+	     		}
+	     		
+	     	}
+	     	while(!senhausuario.equals(senha));
+	     	
+	     	System.out.println("Senha correta");
+	     	
+	        ler.close();
+			
+		}		
+	}
