@@ -1,0 +1,90 @@
+package Main;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner ler = new Scanner(System.in);
+		
+		System.out.println("--- Exercicio 1 ---");
+		
+		int[][] matriz1 = {{3,5,7}, {4,6,8}, {5,7,9}};
+		int[][] matriz2 = {{9,1,5}, {2,3,8}, {8,2,9}};
+		int[][] matrizSoma = new int[3][3];
+		
+		for(int i = 0; i < matriz1.length; i++) {
+			for(int j = 0; j < matriz2.length; j++) {
+				matrizSoma[i][j] = matriz1[i][j] + matriz2[i][j];
+			}
+		}
+		
+		for(int i = 0; i < matriz1.length; i++) {
+			for(int j = 0; j < matriz2.length; j++) {
+				System.out.print(matrizSoma[i][j] + " ");
+				if(j == 2) {
+					System.out.println();
+				}
+			}
+		}
+		System.out.println();
+		System.out.println("--- Exercicio 2 ---");
+		
+		String login, senha;
+		boolean acesso = false;
+		String[][] matrizLogin = {{"Davi", "Java123"}, {"Sabrina", "Java321"}, {"Ale", "Java456"}, {"Manito", "Java654"}, {"Manita", "Java789"}, {"Manite", "Java987"}};
+		
+		do {
+			System.out.println("Digite seu Login: ");
+			login = ler.nextLine();
+			System.out.println("Digite a Senha: ");
+			senha = ler.nextLine();
+			
+			for(int i = 0; i < matrizLogin.length; i++) {
+				for(int j = 0; j < matrizLogin.length; j++) {
+					if (login.equals(matrizLogin[i][0])) {
+						if(senha.equals(matrizLogin[i][1])) {	
+							acesso = true;
+							break;
+						}
+					}
+				}
+			}
+			if(!acesso) {
+				System.out.println("Login ou Senha Inválida!");		
+			}
+		}while(acesso == false);
+		
+		System.out.println("Acesso Liberado!");	
+		
+		System.out.println();
+		System.out.println("--- Exercicio 3 ---");
+		
+		int[][] matrizPrincipal = new int[2][2];
+		
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 2; j++) {
+				System.out.print("Digite posição [" + i + ", " + j + "].");
+				matrizPrincipal[i][j] = ler.nextInt();
+			}
+		}
+		
+		int[][] matrizT = new int[2][2];
+		
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 2; j++) {
+				matrizT[i][j] = matrizPrincipal[j][i];
+			}
+		}
+		
+		for(int i = 0; i < 2; i++) {
+			for(int j = 0; j < 2; j++) {
+				System.out.print(matrizT[i][j] + " ");
+				if (j == 1) {
+					System.out.println();
+				}
+			}
+		}
+		ler.close();
+	}
+
+}
